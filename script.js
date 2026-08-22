@@ -126,6 +126,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------
+     Contact form validation
+  --------------------------------------------- */
+  const contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const setFieldError = (input, message) => {
+      const field = input.closest('.form-field');
+      const errorEl = document.getElementById(`error-${input.name}`);
+      field.classList.toggle('has-error', Boolean(message));
+      if (errorEl) errorEl.textContent = message;
+    };
+
+    const validateField = (input) => {
+      const value = input.value.trim();
+
+      if (!value) {
+        setFieldError(input, '必須項目です。入力してください。');
+        return false;
+      }
+
+      if (input === emailInput && !emailPattern.test(value)) {
+        setFieldError(input, 'メールアドレスの形式が正しくありません。');
+        return false;
+      }
+
+      setFieldError(input, '');
+      return true;
+    };
+
+    [nameInput, emailInput, messageInput].forEach((input) => {
+      input.addEventListener('blur', () => validateField(input));
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const isNameValid = validateField(nameInput);
+      const isEmailValid = validateField(emailInput);
+      const isMessageValid = validateField(messageInput);
+
+      if (!isNameValid || !isEmailValid || !isMessageValid) {
+        return;
+      }
+
+      alert('送信しました');
+      contactForm.reset();
+      [nameInput, emailInput, messageInput].forEach((input) => setFieldError(input, ''));
+    });
+  }
+
+  /* ---------------------------------------------
      Back-to-top button
   --------------------------------------------- */
   const toTop = document.getElementById('to-top');
