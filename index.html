@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAFÉ MORI | 森の中の、静かなコーヒー時間</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="#hero" class="brand">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">CAFÉ MORI</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#hero" class="nav-link">ホーム</a>
+      <a href="#about" class="nav-link">こだわり</a>
+      <a href="#menu" class="nav-link">メニュー</a>
+      <a href="#access" class="nav-link">アクセス</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-leaves" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-reveal>SINCE 2014 &mdash; 森と珈琲の店</p>
+      <h1 class="hero-title" data-reveal>
+        <span class="line">静けさの中で、</span>
+        <span class="line">一杯を味わう。</span>
+      </h1>
+      <p class="hero-desc" data-reveal>
+        木漏れ日と焙煎の香りに包まれる、都会の中の小さな森。<br>
+        CAFÉ MORI で、あなただけの時間を見つけてください。
+      </p>
+      <div class="hero-actions" data-reveal>
+        <a href="#menu" class="btn btn-primary">メニューを見る</a>
+        <a href="#access" class="btn btn-ghost">アクセス</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="下にスクロール">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-text">SCROLL</span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-media" data-reveal>
+        <div class="about-media-frame">
+          <div class="about-media-img img-beans"></div>
+        </div>
+        <div class="about-media-frame small">
+          <div class="about-media-img img-cup"></div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <p class="section-eyebrow" data-reveal>OUR PHILOSOPHY</p>
+        <h2 class="section-title" data-reveal>豆と、時間と、<br>静かなこだわり。</h2>
+        <p class="about-text" data-reveal>
+          CAFÉ MORI では、季節ごとに厳選したスペシャルティコーヒー豆を、店内の小さな焙煎機でゆっくりと自家焙煎しています。
+          一杯ずつハンドドリップで淹れることで、豆本来の甘みと香りを丁寧に引き出します。
+        </p>
+        <p class="about-text" data-reveal>
+          木のぬくもりと緑に囲まれた店内は、忙しい日常から少し離れて深呼吸できる場所。
+          おひとりでの読書時間にも、大切な人との語らいにも。
+        </p>
+        <ul class="about-points" data-reveal>
+          <li><span class="point-num">01</span>自家焙煎スペシャルティコーヒー</li>
+          <li><span class="point-num">02</span>一杯ずつのハンドドリップ</li>
+          <li><span class="point-num">03</span>緑と木漏れ日に包まれた空間</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <div class="section-head center">
+        <p class="section-eyebrow" data-reveal>MENU</p>
+        <h2 class="section-title" data-reveal>おすすめメニュー</h2>
+        <p class="section-lead" data-reveal>厳選した豆と季節の素材で仕立てる、CAFÉ MORI の定番です。</p>
+      </div>
+
+      <div class="menu-tabs" data-reveal role="tablist" aria-label="メニューカテゴリ">
+        <button class="menu-tab is-active" data-target="coffee" role="tab" aria-selected="true">コーヒー</button>
+        <button class="menu-tab" data-target="sweets" role="tab" aria-selected="false">スイーツ</button>
+        <button class="menu-tab" data-target="food" role="tab" aria-selected="false">フード</button>
+      </div>
+
+      <div class="menu-panels">
+        <div class="menu-panel is-active" id="panel-coffee" role="tabpanel">
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-drip"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森のブレンド</h3>
+                  <span class="price">¥620</span>
+                </div>
+                <p>まろやかな甘みとナッツのような香ばしさが広がる、店の定番ブレンド。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-latte"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森カフェラテ</h3>
+                  <span class="price">¥680</span>
+                </div>
+                <p>自家焙煎エスプレッソに、丁寧にスチームしたミルクをたっぷりと。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-single"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>シングルオリジン</h3>
+                  <span class="price">¥780</span>
+                </div>
+                <p>季節ごとに入荷する、産地の個性を楽しむハンドドリップ一杯。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-cold"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森の水出しアイス</h3>
+                  <span class="price">¥650</span>
+                </div>
+                <p>じっくり8時間かけて抽出した、すっきりとまろやかな水出しコーヒー。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" id="panel-sweets" role="tabpanel" hidden>
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-cheesecake"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森のバスクチーズケーキ</h3>
+                  <span class="price">¥580</span>
+                </div>
+                <p>濃厚でありながら軽やかな、自家製バスク風チーズケーキ。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-cookie"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>木の実のクッキー</h3>
+                  <span class="price">¥380</span>
+                </div>
+                <p>ナッツとチョコレートを贅沢に使った、香ばしい焼き菓子。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-tart"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>季節のフルーツタルト</h3>
+                  <span class="price">¥620</span>
+                </div>
+                <p>旬のフルーツをたっぷりのせた、店主自慢の手作りタルト。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-pudding"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森のなめらかプリン</h3>
+                  <span class="price">¥480</span>
+                </div>
+                <p>卵とミルクの優しい甘さが広がる、昔ながらの固めプリン。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" id="panel-food" role="tabpanel" hidden>
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-sandwich"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森の野菜サンド</h3>
+                  <span class="price">¥880</span>
+                </div>
+                <p>自家製カンパーニュに旬の野菜とチーズを挟んだ人気の一品。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-quiche"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>本日のキッシュ</h3>
+                  <span class="price">¥820</span>
+                </div>
+                <p>季節の野菜とベーコンを使った、バターの香り豊かなキッシュ。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-soup"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>森のポタージュ</h3>
+                  <span class="price">¥550</span>
+                </div>
+                <p>旬の野菜を煮込んだ、優しい味わいの日替わりポタージュ。</p>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal>
+              <div class="menu-card-img img-toast"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h3>厚切りバタートースト</h3>
+                  <span class="price">¥480</span>
+                </div>
+                <p>厳選小麦のパンに、じっくり溶けるバターをたっぷりと。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="access" id="access">
+    <div class="section-inner access-grid">
+      <div class="access-info">
+        <p class="section-eyebrow" data-reveal>ACCESS</p>
+        <h2 class="section-title" data-reveal>店舗情報</h2>
+
+        <dl class="access-list" data-reveal>
+          <div class="access-row">
+            <dt>住所</dt>
+            <dd>〒150-0001<br>東京都渋谷区神宮前5-2-XX 森ビル1F</dd>
+          </div>
+          <div class="access-row">
+            <dt>営業時間</dt>
+            <dd>8:00 - 19:00（L.O. 18:30）</dd>
+          </div>
+          <div class="access-row">
+            <dt>定休日</dt>
+            <dd>毎週水曜日</dd>
+          </div>
+          <div class="access-row">
+            <dt>電話番号</dt>
+            <dd>03-1234-5678</dd>
+          </div>
+          <div class="access-row">
+            <dt>アクセス</dt>
+            <dd>各線「表参道駅」A2出口より徒歩5分</dd>
+          </div>
+        </dl>
+
+        <a href="#hero" class="btn btn-primary access-btn">ご来店をお待ちしております</a>
+      </div>
+
+      <div class="access-map" data-reveal aria-hidden="true">
+        <div class="map-placeholder">
+          <div class="map-pin"></div>
+          <span>MAP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">CAFÉ MORI</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 CAFÉ MORI. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="トップへ戻る">&uarr;</button>
+
+<script src="script.js"></script>
+</body>
+</html>
