@@ -89,6 +89,25 @@ dd { margin: 0; }
   height: 68px;
 }
 
+/* スクロールしてヘッダーが不透明になったら、
+   明るい背景に負けないように文字を暗色にする */
+.site-header.is-scrolled .brand {
+  color: var(--color-ink);
+}
+
+.site-header.is-scrolled .nav-link {
+  color: var(--color-ink-soft);
+}
+
+.site-header.is-scrolled .nav-link:hover,
+.site-header.is-scrolled .nav-link.is-active {
+  color: var(--color-ink);
+}
+
+.site-header.is-scrolled .nav-toggle span {
+  background: var(--color-ink);
+}
+
 .header-inner {
   width: 100%;
   max-width: var(--container);
@@ -103,7 +122,8 @@ dd { margin: 0; }
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--color-ink);
+  color: var(--color-cream);
+  transition: color .3s var(--ease);
 }
 
 .brand-mark {
@@ -137,7 +157,7 @@ dd { margin: 0; }
   font-size: 14.5px;
   letter-spacing: 0.06em;
   padding-bottom: 4px;
-  color: var(--color-ink-soft);
+  color: rgba(251, 247, 238, 0.82);
   transition: color .3s var(--ease);
 }
 
@@ -153,7 +173,7 @@ dd { margin: 0; }
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--color-ink);
+  color: var(--color-cream);
 }
 
 .nav-link:hover::after,
@@ -178,7 +198,7 @@ dd { margin: 0; }
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--color-ink);
+  background: var(--color-cream);
   transition: transform .35s var(--ease), opacity .3s var(--ease);
 }
 
@@ -994,6 +1014,17 @@ dd { margin: 0; }
 
   .main-nav.is-open {
     transform: translateX(0);
+  }
+
+  /* ドロワーメニューは常に明るい背景なので、
+     ヘッダーのスクロール状態に関わらず文字は暗色で固定する */
+  #main-nav.is-open .nav-link {
+    color: var(--color-ink-soft);
+  }
+
+  #main-nav.is-open .nav-link:hover,
+  #main-nav.is-open .nav-link.is-active {
+    color: var(--color-ink);
   }
 
   .nav-link { font-size: 18px; }
