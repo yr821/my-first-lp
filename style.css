@@ -89,6 +89,25 @@ dd { margin: 0; }
   height: 68px;
 }
 
+/* スクロールしてヘッダーが不透明になったら、
+   明るい背景に負けないように文字を暗色にする */
+.site-header.is-scrolled .brand {
+  color: var(--color-ink);
+}
+
+.site-header.is-scrolled .nav-link {
+  color: var(--color-ink-soft);
+}
+
+.site-header.is-scrolled .nav-link:hover,
+.site-header.is-scrolled .nav-link.is-active {
+  color: var(--color-ink);
+}
+
+.site-header.is-scrolled .nav-toggle span {
+  background: var(--color-ink);
+}
+
 .header-inner {
   width: 100%;
   max-width: var(--container);
@@ -103,7 +122,8 @@ dd { margin: 0; }
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--color-ink);
+  color: var(--color-cream);
+  transition: color .3s var(--ease);
 }
 
 .brand-mark {
@@ -137,7 +157,7 @@ dd { margin: 0; }
   font-size: 14.5px;
   letter-spacing: 0.06em;
   padding-bottom: 4px;
-  color: var(--color-ink-soft);
+  color: rgba(251, 247, 238, 0.82);
   transition: color .3s var(--ease);
 }
 
@@ -153,7 +173,7 @@ dd { margin: 0; }
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--color-ink);
+  color: var(--color-cream);
 }
 
 .nav-link:hover::after,
@@ -178,7 +198,7 @@ dd { margin: 0; }
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--color-ink);
+  background: var(--color-cream);
   transition: transform .35s var(--ease), opacity .3s var(--ease);
 }
 
@@ -521,6 +541,73 @@ dd { margin: 0; }
   color: var(--color-clay);
   font-size: 18px;
   min-width: 28px;
+}
+
+/* =========================================================
+   Profile（自己紹介）
+========================================================= */
+.profile {
+  padding: 130px 0;
+  background: var(--color-bg-alt);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.profile-copy .section-title { max-width: 420px; }
+
+.profile-name {
+  font-family: var(--font-jp);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 20px;
+}
+
+.profile-role {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-clay);
+  margin-left: 10px;
+}
+
+.profile-media {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.profile-photo-ring {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--color-forest), var(--color-forest-dark));
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 72px;
+  box-shadow: 0 30px 60px -25px rgba(44, 38, 32, 0.4);
 }
 
 /* =========================================================
@@ -929,13 +1016,31 @@ dd { margin: 0; }
     transform: translateX(0);
   }
 
+  /* ドロワーメニューは常に明るい背景なので、
+     ヘッダーのスクロール状態に関わらず文字は暗色で固定する */
+  #main-nav.is-open .nav-link {
+    color: var(--color-ink-soft);
+  }
+
+  #main-nav.is-open .nav-link:hover,
+  #main-nav.is-open .nav-link.is-active {
+    color: var(--color-ink);
+  }
+
   .nav-link { font-size: 18px; }
 
   .nav-toggle { display: flex; }
 
   .section-inner { padding: 0 22px; }
 
-  .about, .menu, .access, .contact { padding: 90px 0; }
+  .about, .profile, .menu, .access, .contact { padding: 90px 0; }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .profile-media { order: -1; }
 
   .form-row { grid-template-columns: 1fr; }
 
