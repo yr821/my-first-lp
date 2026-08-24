@@ -524,6 +524,73 @@ dd { margin: 0; }
 }
 
 /* =========================================================
+   Profile（自己紹介）
+========================================================= */
+.profile {
+  padding: 130px 0;
+  background: var(--color-bg-alt);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.profile-copy .section-title { max-width: 420px; }
+
+.profile-name {
+  font-family: var(--font-jp);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 20px;
+}
+
+.profile-role {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-clay);
+  margin-left: 10px;
+}
+
+.profile-media {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.profile-photo-ring {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--color-forest), var(--color-forest-dark));
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 72px;
+  box-shadow: 0 30px 60px -25px rgba(44, 38, 32, 0.4);
+}
+
+/* =========================================================
    Menu
 ========================================================= */
 .menu {
@@ -935,7 +1002,14 @@ dd { margin: 0; }
 
   .section-inner { padding: 0 22px; }
 
-  .about, .menu, .access, .contact { padding: 90px 0; }
+  .about, .profile, .menu, .access, .contact { padding: 90px 0; }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .profile-media { order: -1; }
 
   .form-row { grid-template-columns: 1fr; }
 
